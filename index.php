@@ -1,12 +1,3 @@
-<?php
-
-require_once 'dbConfig.php';
-
-
-         
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +8,7 @@ require_once 'dbConfig.php';
 </head>
 <body>
     <h1>Aedificim Library</h1>
-    <form method="post" action="addBook.php">
+    <form method="post" action="addBook2.php">
         Title <input type="text" name="title">
         Author <input type="text" name="author">
         Genre <input type="text" name="genre">
