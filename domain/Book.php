@@ -3,15 +3,17 @@
 
 class Book{
     //Attributes of books
-    private $title, $author, $genre, $year;
+    private $title, $author, $genre, $year, $book_id;
     
-    //Book constructor
-    function __construct($title, $author, $genre, $year) {
+    //Book constructor with id
+    function __construct($title, $author, $genre, $year, $book_id) {
         $this->title = $title;
         $this->author = $author;
         $this->genre = $genre;
         $this->year = $year;
+        $this->book_id = $book_id;
     }
+
     
     //Getters
     function get_title(){
@@ -25,6 +27,9 @@ class Book{
     }
     function get_year(){
         return $this->year;
+    }
+    function get_book_id(){
+        return $this->book_id;
     }
     
     //Setters
@@ -40,6 +45,9 @@ class Book{
     function set_year($year){
         $this->year = $year;
     }
+    function set_book_id($book_id){
+        $this->book_id = $book_id;
+    }    
     
     //Array of attributes
     function array(){
@@ -47,7 +55,8 @@ class Book{
             'title' => $this->title,
             'author' => $this->author,
             'genre' => $this->genre,
-            'year' => $this->year
+            'year' => $this->year,
+            'book_id' => $this->book_id
         );
         return $bookArray;
     }

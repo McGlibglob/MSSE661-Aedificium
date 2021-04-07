@@ -8,14 +8,8 @@
 </head>
 <body>
     <h1>Aedificim Library</h1>
-    <form method="post" action="addBook2.php">
-        Title <input type="text" name="title">
-        Author <input type="text" name="author">
-        Genre <input type="text" name="genre">
-        Year <input type="text" name="year">
-        <input type="submit">
-        
-    </form>
+    <a href='addBook.php'> Add a new book<a>
+    <a href='libraryListing.php'> Books in Library<a>
     
 </body>
 </html>
