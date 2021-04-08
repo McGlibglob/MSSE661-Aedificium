@@ -32,8 +32,8 @@ function getResult($sv, $un, $pw, $db){
     <h1>Books in the Library</h1>
 
     <a href='addBook.php'> Add a new book<a>
-    <a href='index.php'>Back home</a>
-    
+            <a href='index.php'>Back home</a>
+    <br>
 </body>
 </html>
     
@@ -41,13 +41,62 @@ function getResult($sv, $un, $pw, $db){
 
 $result = getResult($sv, $un, $pw, $db);
 $rows = $result->num_rows;
+$books=array();
+
+    for ($j = 0; $j < $rows; ++$j) {
+
+        $result->data_seek($j);
+            $title = htmlspecialchars($result->fetch_assoc()['title']);
+
+        $result->data_seek($j);
+            $author = htmlspecialchars($result->fetch_assoc()['author']);
+
+        $result->data_seek($j);
+            $genre = htmlspecialchars($result->fetch_assoc()['genre']);
+
+        $result->data_seek($j);
+            $year = htmlspecialchars($result->fetch_assoc()['year']);
+
+        $result->data_seek($j);
+            $book_id = htmlspecialchars($result->fetch_assoc()['book_id']);
+        
+   $book = new Book($title, $author, $genre, $year, $book_id) ;
+   
+   $bookArr = $book->array();
+   $class = get_class($book);
+   
+   array_push($books, $bookArr);
     
+ }
+ 
+
+ 
 echo '<table style="width:100%">
         <tr>
             <th>Title</th>
             <th>Author</th>
             <th>Genre</th>
             <th>Year</th>
+            <th>book_id</th>
+        </tr>';
+foreach($books as $section => $type) {
+    echo "<tr>";
+    foreach($type as $key => $value){
+        echo "<td>$value</td>";
+    }
+    echo "</tr>";
+} 
+echo '</table>';
+
+
+
+/*echo '<table style="width:100%">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>book_id</th>
             <th>Edit</th>
         </tr>';
     
@@ -65,6 +114,9 @@ echo '<table style="width:100%">
         $result->data_seek($j);
             $year = htmlspecialchars($result->fetch_assoc()['year']);
             echo '<td>'.$year ."</td>"; 
+        $result->data_seek($j);
+            $book_id = htmlspecialchars($result->fetch_assoc()['book_id']);
+            echo '<td>'.$book_id ."</td>";             
         echo '<td><form name="f2" action="javascript:select();" >
                 <input id="edit" type="submit" name="edit" value="Edit" />
                </form></td>';
