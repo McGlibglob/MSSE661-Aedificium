@@ -25,35 +25,31 @@ function getResult($sv, $un, $pw, $db){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="gen.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Books in Library</title>
 </head>
 <body>
     <h1>Books in the Library</h1>
+
+    <a href='addBook.php'> Add a new book<a>
+    <a href='index.php'>Back home</a>
     
+</body>
+</html>
     
 <?php
 
 $result = getResult($sv, $un, $pw, $db);
 $rows = $result->num_rows;
     
-    for ($j = 0; $j < $rows; ++$j) {
-        $result->data_seek($j);
-        echo 'Title: ' .htmlspecialchars($result->fetch_assoc()['title']) .'<br>';
-        $result->data_seek($j);
-        echo 'Author: ' .htmlspecialchars($result->fetch_assoc()['author']) .'<br>';
-        $result->data_seek($j);
-        echo 'Genre: ' .htmlspecialchars($result->fetch_assoc()['genre']) .'<br>';
-        $result->data_seek($j);
-        echo 'Year: ' .htmlspecialchars($result->fetch_assoc()['year']) .'<br><br>';
-    }
-    echo '<table style="width:100%">
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Genre</th>
-                <th>Year</th>
-            </tr>';
+echo '<table style="width:100%">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Edit</th>
+        </tr>';
     
     for ($j = 0; $j < $rows; ++$j) {
         echo '<tr>';
@@ -68,7 +64,10 @@ $rows = $result->num_rows;
             echo '<td>'.$genre ."</td>";
         $result->data_seek($j);
             $year = htmlspecialchars($result->fetch_assoc()['year']);
-            echo '<td>'.$year ."</td>";        
+            echo '<td>'.$year ."</td>"; 
+        echo '<td><form name="f2" action="javascript:select();" >
+                <input id="edit" type="submit" name="edit" value="Edit" />
+               </form></td>';
         echo '</tr>';
    
     }
@@ -79,17 +78,3 @@ $rows = $result->num_rows;
     $conn->close();
 
 ?>
-    <table style="width:100%">
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Genre</th>
-    <th>Year</th>
-  </tr>
-  
-</table>
-    <a href='addBook.php'> Add a new book<a>
-    <a href='index.php'>Back home</a>
-    
-</body>
-</html>
