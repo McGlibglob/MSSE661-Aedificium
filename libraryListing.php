@@ -32,7 +32,7 @@ function getResult($sv, $un, $pw, $db){
     <h1>Books in the Library</h1>
 
     <a href='addBook.php'> Add a new book<a>
-            <a href='index.php'>Back home</a>
+    <a href='index.php'>Back home</a>
     <br>
 </body>
 </html>

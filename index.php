@@ -7,9 +7,9 @@
     <title>Aedificium Library</title>
 </head>
 <body>
-    <h1>Aedificim Library</h1>
+    <h1>Aedificium Library</h1>
     <a href='addBook.php'> Add a new book<a>
     <a href='libraryListing.php'> Books in Library<a>
-    
+    <a href='deleteBook.php'> Delete a Book<a>
 </body>
 </html>
