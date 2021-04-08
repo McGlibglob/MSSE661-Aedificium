@@ -1,7 +1,7 @@
 <?php
 
-require_once 'config/dbConfig.php';
-require_once 'domain/Book.php';
+require_once '../../../config/dbConfig.php';
+require_once '../../../domain/Book.php';
 
 
 function getResult($sv, $un, $pw, $db){
@@ -25,15 +25,18 @@ function getResult($sv, $un, $pw, $db){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>Books in Library</title>
 </head>
 <body>
     <h1>Books in the Library</h1>
 
-    <a href='addBook.php'> Add a new book<a>
-    <a href='index.php'>Back home</a>
-    <br>
+    <a href='/index.php'>  Home   <a><br>
+    <a href='/presentation/book/create/addBook.php'> Add a New Book  <a><br>
+    <a href='/presentation/book/update/updateBook.php'> Update a Book  <a><br>
+    <a href='/presentation/book/delete/deleteBook.php'> Delete a Book  <a><br>
+    
+            
 </body>
 </html>
     
@@ -90,43 +93,5 @@ echo '</table>';
 
 
 
-/*echo '<table style="width:100%">
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Year</th>
-            <th>book_id</th>
-            <th>Edit</th>
-        </tr>';
-    
-    for ($j = 0; $j < $rows; ++$j) {
-        echo '<tr>';
-        $result->data_seek($j);
-            $title = htmlspecialchars($result->fetch_assoc()['title']);
-            echo '<td>'.$title ."</td>";
-        $result->data_seek($j);
-            $author = htmlspecialchars($result->fetch_assoc()['author']);
-            echo '<td>'.$author ."</td>";
-        $result->data_seek($j);
-            $genre = htmlspecialchars($result->fetch_assoc()['genre']);
-            echo '<td>'.$genre ."</td>";
-        $result->data_seek($j);
-            $year = htmlspecialchars($result->fetch_assoc()['year']);
-            echo '<td>'.$year ."</td>"; 
-        $result->data_seek($j);
-            $book_id = htmlspecialchars($result->fetch_assoc()['book_id']);
-            echo '<td>'.$book_id ."</td>";             
-        echo '<td><form name="f2" action="javascript:select();" >
-                <input id="edit" type="submit" name="edit" value="Edit" />
-               </form></td>';
-        echo '</tr>';
-   
-    }
-    echo '</table>';
-    
-    $result->close();
-
-    $conn->close();
 
 ?>

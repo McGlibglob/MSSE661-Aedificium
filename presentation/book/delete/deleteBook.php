@@ -8,12 +8,15 @@
 </head>
 <body>
     <h1>Delete a book</h1>
-    <a href='addBook.php'> Add a new book<a>
-    <a href='libraryListing.php'> Books in Library<a>
-    <a href='index.php'>Back home</a>
+    
+    <a href='/index.php'>  Home   </a><br>
+    <a href='/presentation/book/create/addBook.php'> Add a New Book  </a><br>
+    <a href='/presentation/book/read/bookListing.php'> Books in Library  </a><br>
+    <a href='/presentation/book/update/updateBook.php'> Update a Book  </a><br>
     
     
-    <form method="post" action="addBook2.php">
+    
+    <form method="post" action="deleteBook2.php">
         Book ID <input type="text" name="book_id">
         <input type="submit">
         

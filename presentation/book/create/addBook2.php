@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config/dbConfig.php';
+require_once '../../../config/dbConfig.php';
 
 $title=$author=$genre=$year="";
 
@@ -59,8 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h1>Added Book</h1>
     <p><?php echo $statement; ?> </p>
-    <a href='addBook.php'>Add another book</a>
-    <a href='index.php'>Back home</a>
+    <a href='addBook.php'>Add another book</a><br><br>
+        
+    <a href='/index.php'> Home </a><br>
+    <a href='/presentation/book/read/bookListing.php'> Books in Library</a><br>
+    <a href='/presentation/book/update/updateBook.php'> Update a Book</a><br>
+    <a href='/presentation/book/delete/deleteBook.php'> Delete a Book</a><br>
   
 </body>
 </html>

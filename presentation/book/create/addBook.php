@@ -17,5 +17,10 @@
         
     </form>
     
+    <a href='/index.php'> Home </a><br>
+    <a href='/presentation/book/read/bookListing.php'> Books in Library/<a><br>
+    <a href='/presentation/book/update/updateBook.php'> Update a Book</a><br>
+    <a href='/presentation/book/delete/deleteBook.php'> Delete a Book</a><br>
+    
 </body>
 </html>
