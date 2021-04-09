@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //For title
   $title = $_POST['title'];
   if (!empty($title)) {
-    //echo $title."<br>";
+   //echo $title."<br>";
   } 
   
   //For author

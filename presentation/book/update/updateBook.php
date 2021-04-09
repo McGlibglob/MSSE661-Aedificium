@@ -10,7 +10,7 @@
     <h1>Update a Book</h1>
 
     <p>What is the book that needs to be updated?<p>
-    <form method="post" action="updateBook.php">
+    <form method="post" action="updateBook2.php">
         Book ID <input type="text" name="book_id">
         <input type="submit">
         

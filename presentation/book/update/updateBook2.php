@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Author <input type="text" name="author"  value="<?php echo $author ?>" >
         Genre <input type="text" name="genre"  value="<?php echo $genre ?>" >
         Year <input type="text" name="year"  value="<?php echo $year ?>" >
-        <iput type="hidden" name="book_id" value="<?php echo $book_id ?>">
+        <input type="hidden" name="book_id" value="<?php echo $book_id ?>">
         <input type="submit">
     </form> <br> <br>  
     

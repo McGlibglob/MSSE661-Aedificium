@@ -62,8 +62,11 @@ $books=array();
 
         $result->data_seek($j);
             $book_id = htmlspecialchars($result->fetch_assoc()['book_id']);
+            
+        $result->data_seek($j);
+            $checkout = htmlspecialchars($result->fetch_assoc()['checkout']);
         
-   $book = new Book($title, $author, $genre, $year, $book_id) ;
+   $book = new Book($title, $author, $genre, $year, $book_id, $checkout) ;
    
    $bookArr = $book->array();
    $class = get_class($book);
@@ -76,11 +79,13 @@ $books=array();
  
 echo '<table style="width:100%">
         <tr>
+            <th>Book ID</th>
             <th>Title</th>
             <th>Author</th>
             <th>Genre</th>
             <th>Year</th>
-            <th>book_id</th>
+            <th>Checkout</th>
+            
         </tr>';
 foreach($books as $section => $type) {
     echo "<tr>";
